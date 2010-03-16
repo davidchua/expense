@@ -25,6 +25,10 @@ A simple iPhone-specific interface exists for expense entry and viewing.
 
 ![iPhone interface.](http://cloud.github.com/downloads/tristandunn/expense/expense.iphone.png)
 
+## Daily builds
+
+Code updates are regularly pushed to http://moneybag.heroku.com
+
 ## License
 
 The MIT License
