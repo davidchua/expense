@@ -22,6 +22,41 @@ div.container {
   overflow: hidden;
 }
 
+div#new_search {
+  position: relative;
+  width: 740px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  overflow: hidden;
+}
+
+div#new_search form {
+  background: none;
+  border: 0px;
+  width: 740px;
+  text-align:center;
+}
+
+div#new_search form input {
+  width: 98%;
+  font-size: 25px;
+  border: 1px solid #AAAAAA;
+  margin: 3px;
+  padding: 10px;
+  -moz-border-radius-bottomleft:5px;
+  -moz-border-radius-bottomright:5px;
+  -moz-border-radius-topleft:5px;
+  -moz-border-radius-topright:5px;
+}
+
+div#new_search form span.legend {
+  font-family: verdana ,arial, sans-serif;
+  font-size-adjust: none;
+  text-align:center;
+  font-weight: bold;
+  font-size: 30pt;
+  line-height: 1.25em;
+}
 #header {
   background: #5A843A;
   color: #FFF;

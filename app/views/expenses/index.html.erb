@@ -1,3 +1,16 @@
+<div id="new_search">
+<% if @expense %>
+  <% form_for(@expense) do |form| %>
+    <fieldset>
+      <span class=legend>Add an Expense</span>
+      <%= form.text_field :item %>
+      <br />
+
+    </fieldset>
+  <% end %>
+<% end %>
+</div>
+
 <div id="content">
   <h2>Recent Expenses</h2>
 

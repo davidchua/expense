@@ -18,20 +18,6 @@
       <ul>
         <li><a href="/logout">Logout</a></li>
       </ul>
-
-      <% if @expense %>
-        <% form_for(@expense) do |form| %>
-          <fieldset>
-            <legend>Add an Expense</legend>
-
-            <label for="expense_item">Item</label><br />
-            <%= form.text_field :item %>
-            <br />
-
-            <button type="submit">Add</button>
-          </fieldset>
-        <% end %>
-      <% end %>
     <% end %>
   </div>
 </div>
@@ -58,8 +44,9 @@
   <% end %>
 
   <p>
-    Created by <a href="http://tristandunn.com">Tristan Dunn</a>.<br />
-    Open-source and <a href="http://github.com/tristandunn/expense">available on GitHub</a>.
+    <a href="http://dchua.com">David Chua</a>'s build.<br />
+    Forked from <a href="http://tristandunn.com">Tristan Dunn</a>.<br />
+    Open-source and <a href="http://github.com/davidchua/expense">available on GitHub</a>.
   </p>
 </div>
 
