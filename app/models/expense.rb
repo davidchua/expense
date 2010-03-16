@@ -1,7 +1,7 @@
 class Expense < ActiveRecord::Base
   belongs_to :user
 
-  before_validation :extract_cost_from_item
+  before_validation :extract_cost_from_item, :extract_date_from_item
 
   validates_presence_of     :user_id
   validates_numericality_of :cost, :greater_than => 0
@@ -114,6 +114,11 @@ class Expense < ActiveRecord::Base
       self.cost = $1
       self.item = $3
     end
+  end
+
+  def extract_date_from_item
+      date = Chronic.parse(item)
+      self.created_at = date
   end
 end
 
