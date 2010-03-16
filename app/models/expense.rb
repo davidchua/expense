@@ -7,6 +7,22 @@ class Expense < ActiveRecord::Base
   validates_numericality_of :cost, :greater_than => 0
   validates_presence_of     :item
 
+  # Determine the total for +unit+ of time.
+  #
+  # Valid options for +unit+ include:  month
+  def self.calculate_total_for(unit)
+    date = Time.now
+    unit = unit.to_s
+    case unit
+      when "month"
+        return self.sum(:cost, :conditions => {:created_at => (date.beginning_of_month..date.end_of_month)})
+      when "week"
+        return self.sum(:cost, :conditions => {:created_at => (date.beginning_of_week..date.end_of_week)})
+      when "day"
+        return self.sum(:cost, :conditions => {:created_at => (date.beginning_of_day..date.end_of_day)})
+    end
+  end
+
   # Determine the average for +unit+ of time.
   #
   # Valid options for +unit+ include: day, week, and month
@@ -100,3 +116,4 @@ class Expense < ActiveRecord::Base
     end
   end
 end
+

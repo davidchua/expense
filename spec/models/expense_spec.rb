@@ -6,6 +6,19 @@ describe Expense do
   end
 
   describe 'class' do
+    describe 'when calculating the sum of expenses for a given unit' do
+      fixtures :expenses, :users
+
+      it 'should return the correct totals' do
+        t = Time.gm(2009,6,1,0,0)
+        Timecop.freeze(t) do
+          users(:bob).expenses.calculate_total_for(:month).should == 125.0
+          users(:bob).expenses.calculate_total_for(:week).should == 25.0
+          users(:bob).expenses.calculate_total_for(:day).should == 25.0
+        end
+      end
+    end
+
     describe 'when calculating the average for a given unit' do
       before do
         Expense.stub!(:find_averages_for).and_return([5, 10])

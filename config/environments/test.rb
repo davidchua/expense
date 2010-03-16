@@ -30,6 +30,7 @@ config.gem 'rspec',       :lib => false, :version => '>= 1.2.6'
 config.gem 'rspec-rails', :lib => false, :version => '>= 1.2.6'
 config.gem 'timecop',                    :version => '>= 0.3.1'
 
+config.time_zone = 'UTC'
 config.after_initialize do
-  Timecop.freeze(Time.local(2009, 7, 1, 12))
+  Timecop.freeze(Time.gm(2009, 7, 1, 12))
 end

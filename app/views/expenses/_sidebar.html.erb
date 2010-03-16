@@ -1,6 +1,8 @@
 <h2>Averages</h2>
 
 <dl id="summary">
+  <dt>Total for this month</dt>
+  <dd><%= number_to_currency(@expenses.calculate_total_for(:month)) %></dd>
   <dt>Average per month</dt>
   <dd class="<%= class_for_status_of(:month, @expenses) %>"><%= number_to_currency(@averages[:month] || 0) %></dd>
   <dt>Average per week</dt>
