@@ -1,0 +1,12 @@
+CHANGELOG
+
+16/03/2010
+----------
+
+- You can now add time to your inputs and it will get parsed and filtered
+  accordingly
+
+  "5.25 on subway for lunch 2 days ago"
+
+  Full scale of the language processing can be found at the chronic rubydoc
+  http://chronic.rubyforge.org/
