@@ -1,11 +1,11 @@
 class ExpensesController < ApplicationController
-  caches_action :index,
-                :cache_path => Proc.new { |controller|
-                  user   = controller.__send__(:current_user)
-                  format = controller.request.format.to_sym
+# caches_action :index,
+#               :cache_path => Proc.new { |controller|
+#                 user   = controller.__send__(:current_user)
+#                 format = controller.request.format.to_sym
 
-                  "index/user-#{user.id}.#{format}"
-                }
+#                 "index/user-#{user.id}.#{format}"
+#               }
 
   # List recent expenses.
   def index

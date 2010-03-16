@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   before_filter :adjust_format_for_iphone
 
   # See ActionController::RequestForgeryProtection for details.
-  protect_from_forgery
+  protect_from_forgery :only => [:create, :update, :destroy]
 
   # Scrub sensitive parameters from your log.
   filter_parameter_logging :password, :password_confirmation
