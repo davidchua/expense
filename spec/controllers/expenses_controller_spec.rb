@@ -147,6 +147,34 @@ describe ExpensesController do
     end
   end
 
+  describe 'on DELETE to destroy' do
+    before do
+      @expense.stub!(:destroy)
+      @expense.stub!(:id).and_return(1)
+      Expense.stub!(:find).with('1').and_return(@expense)
+    end
+
+    it 'should redirect' do
+      do_delete
+      response.should redirect_to('/')
+   end
+
+    describe 'when requested for expense' do
+      it 'should destroy expenses' do
+        @expense.should_receive(:destroy)
+        do_delete
+      end
+    end
+
+    protected
+
+    def do_delete(options = {})
+      delete :destroy,
+             :id => options[:id] || @expense.id
+    end
+
+  end
+
   describe 'on GET to search' do
     before do
       @groups = mock('Groups')
