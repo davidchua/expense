@@ -38,6 +38,15 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+
+    flash[:notice] = "Expenses destroyed"
+    redirect_to "/"
+
+  end
+
   # Search expenses.
   def search
     load_expenses_and_averages
